@@ -19,9 +19,6 @@ function addItem(e){
    li.appendChild(document.createTextNode(newItem));	   
    li.appendChild(document.createTextNode(description));
 
-
-
-
 var deleteBtn=document.createElement('button')	  
 var editBtn=document.createElement('button');
 
