@@ -1,16 +1,17 @@
-e.preventDefault();
+//create new li element
 
-  //get input value
-  var newItem = document.getElementById('name').value;
-  var newItem1 = document.getElementById('email').value;
-  var newName = document.getElementById('name').value;
-  var newEmail = document.getElementById('email').value;
+  var data = document.createElement('li');
 
-  //put in local storage
-  localStorage.setItem("name", newItem);
-  localStorage.setItem("email", newItem1);
-  // localStorage.setItem("name", newName);
-  // localStorage.setItem("email", newEmail);
+  // Add class
+
+  data.className = 'list-group-item'
+
+  //add text node with input value
+
+  data.appendChild(document.createTextNode(newName));
+  data.appendChild(document.createTextNode('  ' + newEmail));
+  //append child
+  form.appendChild(data);
 
   let infoObj = {
     name: newName,
@@ -20,7 +21,6 @@ e.preventDefault();
   let infoObj_serialized = JSON.stringify(infoObj);
 
   localStorage.setItem("key", infoObj_serialized);
+  localStorage.setItem(infoObj.email, infoObj_serialized);
 
   let infoObj_deserialized = JSON.parse(localStorage.getItem("infoObj"))
-
-}
